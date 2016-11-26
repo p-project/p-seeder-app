@@ -1,0 +1,13 @@
+{
+  "name": "p-seeder",
+  "version": "0.0.0",
+  "description": "The P-Seeder application",
+  "main": "electron.js",
+  "dependencies": {
+    "vue": "^2.0.1",
+    "vue-electron": "^1.0.0",
+    "vue-mdl": "^1.0.0-alpha.2"
+  },
+  "devDependencies": {},
+  "author": "Adrien Gregorj <adrien.gregorj@gmail.com>"
+}
