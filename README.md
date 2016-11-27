@@ -1,6 +1,7 @@
-# p-seeder
+# P-Seeder Application
 
-> The P-Seeder application
+This application is a friendly frontend for the P-Seeder engine, which allows
+users to upload and seed videos.
 
 ## Build Setup
 
