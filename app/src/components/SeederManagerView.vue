@@ -15,5 +15,5 @@
 <script>
     export default{
       name: 'seeder-manager'
-    };
+    }
 </script>

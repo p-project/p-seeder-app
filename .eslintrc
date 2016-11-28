@@ -3,7 +3,7 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "extends": "semistandard",
+  "extends": "standard",
   "env": {
     "browser": true,
     "node": true
