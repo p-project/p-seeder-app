@@ -1,6 +1,3 @@
-/**
- * Credits to https://github.com/bradstewart/electron-boilerplate-vue/blob/master/build/dev-runner.js
- */
 'use strict';
 
 const config = require('../config');
@@ -32,12 +29,6 @@ function run (command, color, name) {
   child.stdout.on('data', data => {
     console.log(format(name, data, color));
 
-    /**
-     * Start electron after VALID build
-     * (prevents electron from opening a blank window that requires refreshing)
-     *
-     * NOTE: needs more testing for stability
-     */
     if (/VALID/g.test(data.toString().trim().replace(/\n/g, '\n' + repeat(' ', command.length + 2))) && !isElectronOpen) {
       console.log(`${BLUE}Starting electron...\n${END}`);
       run('cross-env NODE_ENV=development electron app/electron.js', BLUE, 'electron');

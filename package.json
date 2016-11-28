@@ -11,7 +11,9 @@
     "build:win32": "cross-env PLATFORM_TARGET=win32 node tasks/release.js",
     "dev": "node tasks/runner.js",
     "pack": "cross-env NODE_ENV=production webpack -p --progress --colors",
-    "postinstall": "cd app && npm install"
+    "postinstall": "cd app && npm install",
+    "lint": "./node_modules/.bin/eslint .",
+    "lint:fix": "./node_modules/.bin/eslint . --fix"
   },
   "author": "Greg Holguin <simulatedgreg@gmail.com>",
   "license": "MIT",
