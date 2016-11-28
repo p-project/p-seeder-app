@@ -1,9 +1,14 @@
 {
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "extends": "semistandard",
   "env": {
-    "node": true,
-    "es6": true,
-    "mocha": true,
-    "jasmine": true
-  }
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "html"
+  ]
 }

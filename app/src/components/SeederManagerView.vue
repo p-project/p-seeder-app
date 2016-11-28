@@ -14,6 +14,6 @@
 
 <script>
     export default{
-        name: 'seeder-manager'
-    }
+      name: 'seeder-manager'
+    };
 </script>
