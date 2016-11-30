@@ -6,7 +6,7 @@
         <mdl-textfield floating-label="Password" type="password"></mdl-textfield><br />
         <mdl-button colored raised>Start</mdl-button><br /><br />
 
-        <a href="#">Continue anonymously</a>
+        <router-link to="/seederManager">Continue anonymously</router-link>
 
     </div>
 </template>
