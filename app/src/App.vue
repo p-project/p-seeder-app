@@ -1,25 +1,17 @@
 <template>
-    <div id="app">
+    <div id="app" v-md-theme="'default'">
         <header-v></header-v>
-        <router-view></router-view>
+        <div class="container">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
 <style>
     @import url(https://fonts.googleapis.com/css?family=Lato:300);
     @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-    @import url(https://code.getmdl.io/1.2.1/material.teal-orange.min.css);
-
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    html,
-    body { height: 100%; }
 
     body {
-        align-items: center;
         background:
             radial-gradient(
                 ellipse at center,
@@ -28,9 +20,11 @@
              );
         background-position: center;
         display: flex;
+        justify-content: space-around;
         font-family: Lato, Helvetica, sans-serif;
-        justify-content: center;
-        text-align: center;
+    }
+    .container {
+        margin: 0 auto;
     }
 </style>
 

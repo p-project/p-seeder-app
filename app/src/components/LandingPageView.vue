@@ -1,10 +1,21 @@
 <template>
-    <div>
+    <div class="main">
         <h1>Welcome.</h1>
 
-        <mdl-textfield floating-label="Pseudo"></mdl-textfield><br />
-        <mdl-textfield floating-label="Password" type="password"></mdl-textfield><br />
-        <mdl-button colored raised>Start</mdl-button><br /><br />
+        <form novalidate @submit.stop.prevent="submit" class="login-form">
+            <md-input-container>
+                <label>Pseudo</label>
+                <md-input></md-input>
+            </md-input-container>
+            <br />
+            <md-input-container>
+                <label>Password</label>
+                <md-input type="password"></md-input>
+            </md-input-container>
+            <br />
+            <md-button class="md-raised md-primary">Primary</md-button>
+            <br />
+        </form>
 
         <router-link to="/seederManager">Continue anonymously</router-link>
 
@@ -12,6 +23,14 @@
 </template>
 
 <style>
+  .main {
+    text-align: center
+  }
+
+  .login-form {
+    width: 300px;
+  }
+
 </style>
 
 
