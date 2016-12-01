@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div id="app">
+        <header-v></header-v>
         <router-view></router-view>
     </div>
 </template>
@@ -35,4 +36,12 @@
 
 
 <script>
+  import HeaderV from './components/HeaderView'
+
+  export default {
+    name: 'app',
+    components: {
+      HeaderV
+    }
+  }
 </script>

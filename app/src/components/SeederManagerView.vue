@@ -1,6 +1,6 @@
 <template>
     <div>
-        <router-link to="/">Login</router-link>
+        Here you can manage your seeding options.
     </div>
 </template>
 
@@ -9,9 +9,8 @@
 
 </style>
 
-
 <script>
-    export default{
-      name: 'seeder-manager'
-    }
+  export default {
+    name: 'seeder-manager'
+  }
 </script>
