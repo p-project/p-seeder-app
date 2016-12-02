@@ -12,17 +12,16 @@
     </header>
 </template>
 
-<style scoped>
-  header {
-    height: 50px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-  .bar {
-    margin-top: 10px;
-  }
+<style scoped lang="scss">
+    header {
+        height: 50px;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    .bar {
+        margin-top: 10px;
+    }
 </style>
 
 <script>

@@ -21,17 +21,17 @@
     </div>
 </template>
 
-<style>
-  .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center
-  }
+<style lang="scss">
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+    }
 
-  .login-form {
-    width: 300px;
-  }
+    .login-form {
+        width: 300px;
+    }
 
 </style>
 

@@ -7,25 +7,23 @@
     </div>
 </template>
 
-<style>
+<style lang="scss">
     @import url(https://fonts.googleapis.com/css?family=Lato:300);
     @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
     body {
-        background:
-            radial-gradient(
-                ellipse at center,
-                rgba(255, 255, 255, 1) 0%,
-                rgba(229, 229, 229, .85) 100%
-             );
-        background-position: center;
+        background: radial-gradient(
+                        ellipse at center,
+                        rgba(255, 255, 255, 1) 0%,
+                        rgba(229, 229, 229, .85) 100%
+        ) center;
         display: flex;
         justify-content: space-around;
         font-family: Lato, Helvetica, sans-serif;
     }
 
     #app {
-    width: 100%;
+        width: 100%;
     }
 
 </style>
