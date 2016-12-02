@@ -13,8 +13,8 @@ Vue.use(VueMaterial)
 Vue.use(Router)
 
 Vue.material.theme.register('default', {
-  primary: 'cyan',
-  accent: 'pink'
+  primary: 'teal',
+  accent: 'orange'
 })
 
 Vue.config.debug = true

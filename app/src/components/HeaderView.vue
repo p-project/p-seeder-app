@@ -1,19 +1,27 @@
 <template>
     <header>
         <div class="bar">
-            <router-link to="/">Login</router-link>
+            <div class="home-icon">
+                <router-link to="/">
+                    <md-button class="md-icon-button md-raised md-primary">
+                        <md-icon>home</md-icon>
+                    </md-button>
+                </router-link>
+            </div>
         </div>
     </header>
 </template>
 
 <style scoped>
   header {
-    height: 20px;
-    background: #777777;
-    position: fixed;
+    height: 50px;
+    width: 100%;
     top: 0;
     left: 0;
     width: 100%;
+  }
+  .bar {
+    margin-top: 10px;
   }
 </style>
 

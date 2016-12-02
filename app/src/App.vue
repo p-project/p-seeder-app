@@ -23,9 +23,11 @@
         justify-content: space-around;
         font-family: Lato, Helvetica, sans-serif;
     }
-    .container {
-        margin: 0 auto;
+
+    #app {
+    width: 100%;
     }
+
 </style>
 
 

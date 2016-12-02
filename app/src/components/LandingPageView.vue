@@ -12,7 +12,6 @@
                 <label>Password</label>
                 <md-input type="password"></md-input>
             </md-input-container>
-            <br />
             <md-button class="md-raised md-primary">Primary</md-button>
             <br />
         </form>
@@ -24,6 +23,9 @@
 
 <style>
   .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center
   }
 
