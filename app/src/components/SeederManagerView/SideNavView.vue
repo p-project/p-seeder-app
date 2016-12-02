@@ -39,8 +39,7 @@
 </style>
 
 <script>
-
-    export default{
-         name: 'side-nav'
-    }
+  export default{
+    name: 'side-nav'
+  }
 </script>
