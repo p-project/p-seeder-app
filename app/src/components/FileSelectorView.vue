@@ -1,14 +1,17 @@
 <template>
     <div class="file-selector">
-        <input type="file" />
+        <form novalidate @submit.stop.prevent="submit">
+            <md-input-container>
+                <md-input type="file"></md-input>
+            </md-input-container>
+            <md-button class="md-raised md-primary">Seed</md-button>
+        </form>
     </div>
 </template>
 
 <style lang="scss">
     .file-selector {
-        height: 200px;
-        width: 200px;
-        background-color: #c3c3c3;
+        width: 40%;
     }
 </style>
 

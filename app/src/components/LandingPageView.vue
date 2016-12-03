@@ -12,11 +12,11 @@
                 <label>Password</label>
                 <md-input type="password"></md-input>
             </md-input-container>
-            <md-button class="md-raised md-primary">Primary</md-button>
+            <md-button class="md-raised md-primary">Login</md-button>
             <br />
         </form>
 
-        <router-link to="/seederManager">Continue anonymously</router-link>
+        <router-link to="/newSeed">Continue anonymously</router-link>
 
     </div>
 </template>
