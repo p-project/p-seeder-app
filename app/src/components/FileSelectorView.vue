@@ -17,6 +17,6 @@
 
 <script>
   export default{
-    name: 'selector'
+    name: 'holder'
   }
 </script>

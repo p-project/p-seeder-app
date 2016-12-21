@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Electron from 'vue-electron'
-import Resource from 'vue-resource'
 import Router from 'vue-router'
 import VueMaterial from 'vue-material'
 
@@ -12,7 +11,6 @@ import routes from './routes'
 Vue.use(Electron)
 Vue.use(VueMaterial)
 Vue.use(Router)
-Vue.use(Resource)
 
 Vue.material.theme.register('default', {
   primary: 'teal',
