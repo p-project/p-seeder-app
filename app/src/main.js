@@ -1,6 +1,7 @@
 import Vue from 'vue'
-import Electron from 'vue-electron'
-import Router from 'vue-router'
+import VueElectron from 'vue-electron'
+import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
 import VueMaterial from 'vue-material'
 
 import 'vue-material/dist/vue-material.css'
@@ -8,9 +9,10 @@ import 'vue-material/dist/vue-material.css'
 import App from './App'
 import routes from './routes'
 
-Vue.use(Electron)
+Vue.use(VueElectron)
 Vue.use(VueMaterial)
-Vue.use(Router)
+Vue.use(VueRouter)
+Vue.use(VueResource)
 
 Vue.material.theme.register('default', {
   primary: 'teal',
@@ -19,7 +21,7 @@ Vue.material.theme.register('default', {
 
 Vue.config.debug = true
 
-const router = new Router({
+const router = new VueRouter({
   scrollBehavior: () => ({ y: 0 }),
   routes
 })
