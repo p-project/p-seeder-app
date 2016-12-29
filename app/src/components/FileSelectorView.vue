@@ -19,9 +19,9 @@
   export default{
     name: 'selector',
     data: function () {
-     return {
-       torrent: ''
-     }
+      return {
+        torrent: ''
+      }
     },
     methods: {
       add (torrent) {

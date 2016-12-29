@@ -16,7 +16,6 @@ Vue.use(VueResource)
 
 Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:2342'
 
-
 Vue.material.theme.register('default', {
   primary: 'teal',
   accent: 'orange'
