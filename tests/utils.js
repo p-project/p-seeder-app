@@ -1,15 +1,23 @@
-'use strict'
+import electron from 'electron'
+import { Application } from 'spectron'
 
-// Enable use of es2015 on required files
-require('babel-register')({
-  ignore: /node_modules/
-})
+export default {
+  afterEach () {
+    this.timeout(10000)
 
-// Attach Chai APIs to global scope
-const { expect, should, assert } = require('chai')
-global.expect = expect
-global.should = should
-global.assert = assert
+    if (this.app && this.app.isRunning()) {
+      return this.app.stop()
+    }
+  },
+  beforeEach () {
+    this.timeout(10000)
+    this.app = new Application({
+      path: electron,
+      args: ['app'],
+      startTimeout: 10000,
+      waitTimeout: 10000
+    })
 
-// Require all JS files in `./specs` for Mocha to consume
-require('require-dir')('./specs')
+    return this.app.start()
+  }
+}
