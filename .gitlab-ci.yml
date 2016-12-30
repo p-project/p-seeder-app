@@ -1,6 +1,21 @@
 image: node:latest
-lint:
+
+before_script:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - export PATH=$HOME/.yarn/bin:$PATH
+  - yarn
+
+stages:
+  - test
+  - lint
+  - build
+
+e2e:
+  stage: test
   script:
-    - yarn
-    - npm run lint
     - npm run e2e
+
+lint:
+  stage: lint
+  script:
+    - npm run lint
