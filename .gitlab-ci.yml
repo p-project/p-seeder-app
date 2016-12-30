@@ -1,6 +1,6 @@
 image: node:latest
 lint:
   script:
-    - npm i
+    - yarn
     - npm run lint
     - npm run e2e
