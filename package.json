@@ -14,7 +14,7 @@
     "postinstall": "cd app && npm install",
     "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter app test",
     "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix app test",
-    "e2e": "mocha tests"
+    "e2e": "npm run pack && mocha tests"
   },
   "author": "Greg Holguin <simulatedgreg@gmail.com>",
   "license": "MIT",
