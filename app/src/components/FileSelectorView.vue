@@ -9,14 +9,9 @@
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
     .file-selector {
         width: 40%;
     }
 </style>
 
-<script>
-  export default{
-    name: 'holder'
-  }
-</script>

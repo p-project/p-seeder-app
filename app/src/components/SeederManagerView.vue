@@ -22,10 +22,10 @@
 
 <script>
   import SideNav from './SeederManagerView/SideNavView'
+
   export default {
-    name: 'seeder-manager',
     components: {
-      SideNav
+      'side-nav': SideNav
     }
   }
 </script>

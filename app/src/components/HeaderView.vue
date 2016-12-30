@@ -21,8 +21,3 @@
 
 </style>
 
-<script>
-  export default {
-    name: 'header-view'
-  }
-</script>

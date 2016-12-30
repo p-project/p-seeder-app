@@ -28,9 +28,8 @@
   import HeaderV from './components/HeaderView'
 
   export default {
-    name: 'app',
     components: {
-      HeaderV
+      'header-v': HeaderV
     }
   }
 </script>
