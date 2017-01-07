@@ -16,7 +16,7 @@ e2e:
     - apt-get update
     - apt-get install -y libgtk2.0-0 libgconf-2-4 libasound2 libxtst6 libxss1 libnss3 xvfb
     - export DISPLAY=:99.0
-    - start-stop-daemon --start --quite --pidfile /var/run/xvfb.pid --make-pidfile --background --exec Xvfb -- :99 -screen 0 1024x768x24 -fbdir /var/run -ac
+    - start-stop-daemon --start --quiet --pidfile /var/run/xvfb.pid --make-pidfile --background --exec Xvfb -- :99 -screen 0 1024x768x24 -fbdir /var/run -ac
     - npm run e2e
 
 lint:
