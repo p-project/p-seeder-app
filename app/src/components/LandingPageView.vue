@@ -34,10 +34,3 @@
     }
 
 </style>
-
-
-<script>
-    export default {
-      name: 'landing-page'
-    }
-</script>

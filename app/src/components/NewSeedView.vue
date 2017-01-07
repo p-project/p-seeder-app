@@ -18,9 +18,8 @@
   import FileSelector from './FileSelectorView'
 
   export default {
-    name: 'new-seed',
     components: {
-      FileSelector
+      'file-selector': FileSelector
     }
   }
 </script>
