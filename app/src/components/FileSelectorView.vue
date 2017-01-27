@@ -9,7 +9,7 @@
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
     .file-selector {
         width: 40%;
     }
