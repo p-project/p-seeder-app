@@ -14,6 +14,8 @@ Vue.use(VueMaterial)
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
+Vue.http.options.emulateJSON = true
+
 Vue.material.theme.register('default', {
   primary: 'teal',
   accent: 'orange'

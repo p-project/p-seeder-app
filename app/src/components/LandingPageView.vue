@@ -16,7 +16,7 @@
             <br />
         </form>
 
-        <router-link to="/newSeed">Continue anonymously</router-link>
+        <router-link to="/seederManager">Continue anonymously</router-link>
 
     </div>
 </template>
