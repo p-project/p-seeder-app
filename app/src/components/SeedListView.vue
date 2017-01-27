@@ -62,10 +62,10 @@
         console.log('error', response)
       })
     },
-    methods : {
+    methods: {
       remove (torrent) {
         this.$http.delete('http://localhost:2342/delete/' + torrent).then((response) => {
-          this.torrents = this.torrents.filter(t => t != torrent)
+          this.torrents = this.torrents.filter(t => t !== torrent)
         }, (response) => {
           console.log('error', response)
         })
