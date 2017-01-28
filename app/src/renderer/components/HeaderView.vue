@@ -1,4 +1,4 @@
-<template>
+SeederManagerView<template>
     <header>
         <div class="bar">
             <router-link to="/">

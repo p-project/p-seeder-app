@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <h1>Welcome.</h1>
+        <h1>Welcome...</h1>
 
         <form novalidate @submit.stop.prevent="submit" class="login-form">
             <md-input-container>

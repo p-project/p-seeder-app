@@ -1,9 +1,11 @@
-'use strict';
+'use strict'
 
-const path = require('path');
+const path = require('path')
 
 let config = {
-  name: 'p-seeder',
+  name: 'p-seeder-app',
+
+  eslint: true,
 
   port: 9080,
 
@@ -12,13 +14,13 @@ let config = {
     asar: true,
     dir: path.join(__dirname, 'app'),
     icon: path.join(__dirname, 'app/icons/icon'),
-    ignore: /\b(node_modules|src|index\.ejs|icons)\b/,
+    ignore: /\b(src|index\.ejs|icons)\b/,
     out: path.join(__dirname, 'builds'),
     overwrite: true,
     platform: process.env.PLATFORM_TARGET || 'all'
   }
-};
+}
 
-config.building.name = config.name;
+config.building.name = config.name
 
-module.exports = config;
+module.exports = config
