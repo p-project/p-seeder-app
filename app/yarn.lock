@@ -10,19 +10,9 @@ element.scrollintoviewifneeded-polyfill@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/element.scrollintoviewifneeded-polyfill/-/element.scrollintoviewifneeded-polyfill-1.0.1.tgz#89a023481e81e7dfd72105c4c9170e83b357454f"
 
-focus-trap@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-2.1.0.tgz#00e20dea96be9346897208860bd19136da87516a"
-  dependencies:
-    tabbable "^1.0.3"
-
 "scopedQuerySelectorShim@github:lazd/scopedQuerySelectorShim":
   version "0.0.0"
   resolved "https://codeload.github.com/lazd/scopedQuerySelectorShim/tar.gz/0ef4855a7944207510cdc0375a43956b2fc18410"
-
-tabbable@^1.0.3:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-1.0.5.tgz#eeeb8abf6ea4b9ebe024189d64b5dcfdb30863ad"
 
 vue-electron@^1.0.0:
   version "1.0.6"
@@ -37,24 +27,18 @@ vue-material@^0.3.3:
     scopedQuerySelectorShim lazd/scopedQuerySelectorShim
     vue "^2.0.8"
 
-vue-mdl@^1.0.0-alpha.2:
-  version "1.0.0-alpha.5"
-  resolved "https://registry.yarnpkg.com/vue-mdl/-/vue-mdl-1.0.0-alpha.5.tgz#7051776716e5db226bd20cde26dce82e52f5caae"
-  dependencies:
-    focus-trap "^2.1.0"
-
 vue-resource@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/vue-resource/-/vue-resource-1.0.3.tgz#8d52d0d8a9ed5f2ae704c68d530c84ceaf97be14"
 
 vue-router@^2.1.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.1.1.tgz#10c31bbdcb6da92bd3e0223fa12345e73018625a"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.2.0.tgz#65a29ce23d718ddf09237938a58a01b3d1acc77c"
 
 vue@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.0.1.tgz#ea20979eb5440ea7da086097befd598fb548dbc1"
 
 vue@^2.0.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.8.tgz#ae30aa86024fccf5535292ce414e7b4c221a1756"
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.10.tgz#c9235ca48c7925137be5807832ac4e3ac180427b"
