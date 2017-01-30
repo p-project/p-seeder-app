@@ -38,20 +38,19 @@
 
 <style scoped lang="scss" rel="stylesheet/scss">
     .overlay {
-        background: rgba(0,0,0,.5);
+        background: rgba(0,0,0,.8);
         width: 100%;
         height: 100%;
         position: absolute;
         top: 0;
         left: 0;
         z-index: 999;
-        filter: blur(1px);
 
         .loader {
             position: absolute;
             top: calc(50% - 21px);
             left: calc(50% - 21px);
-            color: #009688;
+            color: #ff9800;
         }
     }
     .seed-list {
@@ -75,35 +74,43 @@
       return {
         torrents: [],
         newTorrent: '',
-        loading: true
+        loading: false
       }
     },
     mounted () {
+      this.loading = true
       this.$http.get('http://localhost:2342/list').then((response) => {
         this.torrents = response.data
+        this.loading = false
       }, (response) => {
         console.log('error', response)
+        this.loading = false
       })
     },
     methods: {
       openDialog () {
         const {dialog} = require('electron').remote
         this.newTorrent = dialog.showOpenDialog({properties: ['openFile']})[0]
-        console.log(this.newTorrent)
       },
       remove (torrent) {
+        this.loading = true
         this.$http.delete('http://localhost:2342/delete/' + torrent).then((response) => {
           this.torrents = this.torrents.filter(t => t !== torrent)
+          this.loading = false
         }, (response) => {
           console.log('error', response)
+          this.loading = false
         })
       },
       add () {
+        this.loading = true
         this.$http.post('http://localhost:2342/seedNewVideo', {videoPath: this.newTorrent}).then((response) => {
           this.torrents.push(response.data.torrentHashInfo)
           this.newTorrent = ''
+          this.loading = false
         }, (response) => {
           console.log('error')
+          this.loading = false
         })
       }
     }
