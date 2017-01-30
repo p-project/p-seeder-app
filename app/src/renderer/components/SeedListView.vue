@@ -90,7 +90,10 @@
     methods: {
       openDialog () {
         const {dialog} = require('electron').remote
-        this.newTorrent = dialog.showOpenDialog({properties: ['openFile']})[0]
+        let result = dialog.showOpenDialog({properties: ['openFile']})
+        if (result) {
+          this.newTorrent = result[0]
+        }
       },
       remove (torrent) {
         this.loading = true
@@ -103,15 +106,17 @@
         })
       },
       add () {
-        this.loading = true
-        this.$http.post('http://localhost:2342/seedNewVideo', {videoPath: this.newTorrent}).then((response) => {
-          this.torrents.push(response.data.torrentHashInfo)
-          this.newTorrent = ''
-          this.loading = false
-        }, (response) => {
-          console.log('error')
-          this.loading = false
-        })
+        if (this.newTorrent) {
+          this.loading = true
+          this.$http.post('http://localhost:2342/seedNewVideo', {videoPath: this.newTorrent}).then((response) => {
+            this.torrents.push(response.data.torrentHashInfo)
+            this.newTorrent = ''
+            this.loading = false
+          }, (response) => {
+            console.log('error')
+            this.loading = false
+          })
+        }
       }
     }
   }
