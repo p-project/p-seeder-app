@@ -1,5 +1,5 @@
 <template>
-    <div id="app" v-md-theme="'default'">
+    <div id="app">
         <header-v></header-v>
         <div class="container">
             <router-view></router-view>

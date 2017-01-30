@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import Material from 'vue-material'
 
 import 'vue-material/dist/vue-material.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 import App from './App'
 import routes from './routes'
