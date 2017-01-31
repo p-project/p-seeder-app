@@ -1,0 +1,39 @@
+<template>
+    <div>
+        <div class="overlay" v-if="load">
+            <div class="loader">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style scoped lang="scss" rel="stylesheet/scss">
+    .overlay {
+        background: rgba(0,0,0,.8);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+
+        .loader {
+            position: absolute;
+            top: calc(50% - 21px);
+            left: calc(50% - 21px);
+            color: #ff9800;
+        }
+    }
+</style>
+
+<script>
+  export default{
+    props: ['load'],
+    data () {
+      return {
+        loading: false
+      }
+    }
+  }
+</script>

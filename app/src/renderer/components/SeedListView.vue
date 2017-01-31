@@ -1,10 +1,6 @@
 <template>
     <div class="manager">
-        <div class="overlay" v-if="loading">
-            <div class="loader">
-                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-            </div>
-        </div>
+        <loader :load="loading"></loader>
         <div class="seed-list">
             <md-card v-for="torrent in torrents">
                 <md-card-header>
@@ -25,14 +21,7 @@
                 </md-card-actions>
             </md-card>
         </div>
-        <div class="file-selector">
-            <form novalidate @submit.stop.prevent="submit">
-                <md-input-container>
-                    <md-input @click.native="openDialog" v-model="newTorrent"></md-input>
-                </md-input-container >
-                <md-button class="md-raised md-primary" v-on:click="add">Seed</md-button>
-            </form>
-        </div>
+        </md-whiteframe>
     </div>
 </template>
 
@@ -62,14 +51,19 @@
         width: 300px;
         margin: 10px 10px 10px 10px;
     }
-    .file-selector {
+    .new-seed {
         margin: auto;
-        width: 40%;
+        width: 20%;
     }
 </style>
 
 <script>
+  import Loader from './LoaderView.vue'
+
   export default{
+    components: {
+      'loader': Loader
+    },
     data () {
       return {
         torrents: [],
@@ -88,13 +82,6 @@
       })
     },
     methods: {
-      openDialog () {
-        const {dialog} = require('electron').remote
-        let result = dialog.showOpenDialog({properties: ['openFile']})
-        if (result) {
-          this.newTorrent = result[0]
-        }
-      },
       remove (torrent) {
         this.loading = true
         this.$http.delete('http://localhost:2342/delete/' + torrent).then((response) => {
@@ -104,19 +91,6 @@
           console.log('error', response)
           this.loading = false
         })
-      },
-      add () {
-        if (this.newTorrent) {
-          this.loading = true
-          this.$http.post('http://localhost:2342/seedNewVideo', {videoPath: this.newTorrent}).then((response) => {
-            this.torrents.push(response.data.torrentHashInfo)
-            this.newTorrent = ''
-            this.loading = false
-          }, (response) => {
-            console.log('error')
-            this.loading = false
-          })
-        }
       }
     }
   }
