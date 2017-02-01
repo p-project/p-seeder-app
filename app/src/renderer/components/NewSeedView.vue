@@ -1,8 +1,14 @@
 <template>
     <div class="new-seed">
         <loader :load="loading"></loader>
-        <h2>Here you can browse a video to seed.</h2>
-        <form novalidate @submit.stop.prevent="submit">
+        <h3>Select a video to seed.</h3>
+        <form @submit.stop.prevent="submit" class="seed-form">
+            <div class="file-selection">
+                <md-button @click.native="openDialog" class="md-fab md-primary md-mini">
+                    <md-icon>create_new_folder</md-icon>
+                </md-button>
+                <md-chip v-if="newTorrent">{{ newTorrent }}</md-chip>
+            </div>
             <md-input-container>
                 <label>Name</label>
                 <md-input></md-input>
@@ -11,21 +17,26 @@
                 <label>Description</label>
                 <md-textarea></md-textarea>
             </md-input-container>
-            <md-input-container>
-                <md-input @click.native="openDialog" v-model="newTorrent"></md-input>
-                <md-input></md-input>
-            </md-input-container >
             <md-button class="md-raised md-primary" v-on:click="add">Seed</md-button>
         </form>
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" rel="stylesheet/scss">
     .new-seed {
+        margin: auto;
+        width: 50%;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .seed-form {
+        width: 100%;
+    }
+    .file-selection {
+        display: flex;
+        flex-direction: row;
     }
 </style>
 
@@ -54,8 +65,12 @@
         if (this.newTorrent) {
           this.loading = true
           this.$http.post('http://localhost:2342/seedNewVideo', {videoPath: this.newTorrent}).then((response) => {
-            this.newTorrent = ''
             this.loading = false
+              /* eslint-disable no-new */
+            new Notification('The file is now being seeded.')
+            this.newTorrent = ''
+            this.$router.push('/seedList')
+            console.log('lol')
           }, (response) => {
             console.log('error')
             this.loading = false

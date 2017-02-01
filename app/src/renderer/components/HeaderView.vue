@@ -6,7 +6,7 @@
                     <md-icon>menu</md-icon>
                 </md-button>
 
-                <h2 class="md-title" style="flex: 1">Default</h2>
+                <h2 class="md-title" style="flex: 1">{{ $route.name }}</h2>
 
             </md-toolbar>
             <md-sidenav class="md-left" ref="sidenav">
@@ -33,21 +33,21 @@
 
                 <md-list>
                     <md-list-item @click="$refs.sidenav.toggle()">
-                        <router-link :to="{ name: 'landing-page' }">
+                        <router-link :to="{ name: 'landing-page' }" exact>
                             <md-icon>home</md-icon>
                             <span>Home</span>
                         </router-link>
                     </md-list-item>
 
                     <md-list-item @click="$refs.sidenav.toggle()">
-                        <router-link :to="{ name: 'seed-list' }">
+                        <router-link :to="{ name: 'seed-list' }" exact>
                             <md-icon>local_florist</md-icon>
                             <span>My seeds</span>
                         </router-link>
                     </md-list-item>
 
                     <md-list-item @click="$refs.sidenav.toggle()">
-                        <router-link :to="{ name: 'new-seed' }">
+                        <router-link :to="{ name: 'new-seed' }" exact>
                             <md-icon>create_new_folder</md-icon>
                             <span>New seed</span>
                         </router-link>

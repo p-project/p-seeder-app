@@ -51,10 +51,6 @@
         width: 300px;
         margin: 10px 10px 10px 10px;
     }
-    .new-seed {
-        margin: auto;
-        width: 20%;
-    }
 </style>
 
 <script>

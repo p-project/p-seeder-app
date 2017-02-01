@@ -2,7 +2,7 @@
     <div class="main">
         <h1>Welcome.</h1>
 
-        <form novalidate @submit.stop.prevent="submit" class="login-form">
+        <form @submit.stop.prevent="submit" class="login-form">
             <md-input-container>
                 <label>Pseudo</label>
                 <md-input></md-input>
@@ -16,7 +16,7 @@
             <br />
         </form>
 
-        <router-link to="/seederManager">Continue anonymously</router-link>
+        <router-link :to="{ name: 'seed-list' }">Continue anonymously</router-link>
 
     </div>
 </template>
