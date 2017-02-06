@@ -17,6 +17,13 @@
                 <label>Description</label>
                 <md-textarea></md-textarea>
             </md-input-container>
+
+            <div>
+                <md-radio v-model="visibility" id="private" name="visibility" md-value="1" class="md-primary">Private</md-radio>
+                <md-radio v-model="visibility" id="public" name="visibility" md-value="2" class="md-primary">Public</md-radio>
+                <md-radio v-model="visibility" id="link" name="visibility" md-value="3" class="md-primary">Link</md-radio>
+            </div>
+
             <md-button class="md-raised md-primary" v-on:click="add">Seed</md-button>
         </form>
     </div>
@@ -50,6 +57,7 @@
     data () {
       return {
         newTorrent: '',
+        visibility: 2,
         loading: false
       }
     },
