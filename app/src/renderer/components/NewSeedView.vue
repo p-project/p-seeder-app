@@ -72,13 +72,12 @@
       add () {
         if (this.newTorrent) {
           this.loading = true
-          this.$http.post('http://localhost:2342/seed', {videoPath: this.newTorrent}).then((response) => {
+          this.$http.post('http://localhost:2342/seed', {path: this.newTorrent}).then((response) => {
             this.loading = false
               /* eslint-disable no-new */
             new Notification('The file is now being seeded.')
             this.newTorrent = ''
             this.$router.push('/seedList')
-            console.log('lol')
           }, (response) => {
             console.log('error')
             this.loading = false
