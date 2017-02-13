@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Electron from 'vue-electron'
 import Resource from 'vue-resource'
+import Vuex from 'vuex'
 import Router from 'vue-router'
 import Material from 'vue-material'
 
@@ -12,6 +13,7 @@ import routes from './routes'
 
 Vue.use(Electron)
 Vue.use(Resource)
+Vue.use(Vuex)
 Vue.use(Material)
 Vue.use(Router)
 Vue.config.debug = true
