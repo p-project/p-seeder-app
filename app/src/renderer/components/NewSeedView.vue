@@ -7,15 +7,16 @@
                 <md-button @click.native="openDialog" class="md-fab md-primary md-mini">
                     <md-icon>create_new_folder</md-icon>
                 </md-button>
-                <md-chip v-if="newTorrent">{{ newTorrent }}</md-chip>
+                <md-chip v-if="path">{{ path }}</md-chip>
             </div>
             <md-input-container>
                 <label>Name</label>
-                <md-input></md-input>
+                <md-input v-model="name"></md-input>
             </md-input-container>
+
             <md-input-container>
                 <label>Description</label>
-                <md-textarea></md-textarea>
+                <md-textarea v-model="desc"></md-textarea>
             </md-input-container>
 
             <div>
@@ -56,7 +57,10 @@
     },
     data () {
       return {
-        newTorrent: '',
+        path: '',
+        name: '',
+        desc: '',
+        categories: '/categories/',
         visibility: 2,
         loading: false
       }
@@ -66,20 +70,22 @@
         const {dialog} = require('electron').remote
         let result = dialog.showOpenDialog({properties: ['openFile']})
         if (result) {
-          this.newTorrent = result[0]
+          this.path = result[0]
         }
       },
       add () {
-        if (this.newTorrent) {
+        if (this.path) {
           this.loading = true
-          this.$http.post('http://localhost:2342/seed', {path: this.newTorrent}).then((response) => {
+          this.$http.post('http://localhost:2342/seed', {
+            path: this.path, desc: this.desc, name: this.name, categories: this.categories
+          }).then((response) => {
             this.loading = false
               /* eslint-disable no-new */
             new Notification('The file is now being seeded.')
-            this.newTorrent = ''
+            this.path = ''
             this.$router.push('/seedList')
           }, (response) => {
-            console.log('error')
+            console.log('error: ' + response.body)
             this.loading = false
           })
         }
