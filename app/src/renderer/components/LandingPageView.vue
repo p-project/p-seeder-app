@@ -1,5 +1,7 @@
 <template>
     <div class="main">
+        <loader :load="loading"></loader>
+
         <h1>Welcome.</h1>
 
         <form @submit.stop.prevent="submit" class="login-form">
@@ -12,7 +14,7 @@
                 <label>Password</label>
                 <md-input type="password"></md-input>
             </md-input-container>
-            <md-button class="md-raised md-primary">Login</md-button>
+            <md-button class="md-raised md-primary" v-on:click="log">Login</md-button>
             <br />
         </form>
 
@@ -34,3 +36,30 @@
     }
 
 </style>
+
+<script>
+  import Loader from './LoaderView.vue'
+
+  export default{
+    components: {
+      'loader': Loader
+    },
+    data () {
+      return {
+        loading: false
+      }
+    },
+    methods: {
+      log () {
+        this.loading = true
+        this.$http.get('http://localhost:8001/accounts/11').then((response) => {
+          this.loading = false
+          console.log(JSON.parse(response.body)['username'])
+        }, (response) => {
+          console.log('error')
+          this.loading = false
+        })
+      }
+    }
+  }
+</script>
