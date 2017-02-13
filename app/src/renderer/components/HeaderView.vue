@@ -20,7 +20,7 @@
 
                         <md-list-item>
                             <div class="md-list-text-container">
-                                <span>John Doe</span>
+                                <span>{{ username }}</span>
                                 <span>johndoe@email.com</span>
                             </div>
 
@@ -77,3 +77,13 @@
     }
 </style>
 
+<script>
+
+  export default{
+    computed: {
+      username () {
+        return this.$store.state.authUser
+      }
+    }
+  }
+</script>

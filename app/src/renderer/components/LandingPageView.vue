@@ -51,14 +51,7 @@
     },
     methods: {
       log () {
-        this.loading = true
-        this.$http.get('http://localhost:8001/accounts/11').then((response) => {
-          this.loading = false
-          console.log(JSON.parse(response.body)['username'])
-        }, (response) => {
-          console.log('error')
-          this.loading = false
-        })
+        this.$store.dispatch('login')
       }
     }
   }

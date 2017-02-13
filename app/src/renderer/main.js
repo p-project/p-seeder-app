@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Electron from 'vue-electron'
 import Resource from 'vue-resource'
-import Vuex from 'vuex'
 import Router from 'vue-router'
 import Material from 'vue-material'
 
@@ -10,10 +9,10 @@ import 'font-awesome/css/font-awesome.min.css'
 
 import App from './App'
 import routes from './routes'
+import store from './store'
 
 Vue.use(Electron)
 Vue.use(Resource)
-Vue.use(Vuex)
 Vue.use(Material)
 Vue.use(Router)
 Vue.config.debug = true
@@ -32,5 +31,6 @@ const router = new Router({
 
 new Vue({
   router,
+  store,
   ...App
 }).$mount('#app')
