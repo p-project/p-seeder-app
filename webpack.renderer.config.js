@@ -68,6 +68,10 @@ let rendererConfig = {
           limit: 10000,
           name: 'fonts/[name].[ext]'
         }
+      },
+      {
+        test: /\.yml$/,
+        loader: 'yml-loader'
       }
     ]
   },

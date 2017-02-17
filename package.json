@@ -51,9 +51,12 @@
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.16.1",
+    "js-yaml": "^3.8.1",
     "json-loader": "^0.5.4",
     "mocha": "^3.0.2",
+    "node-sass": "^4.4.0",
     "require-dir": "^0.3.0",
+    "sass-loader": "^4.1.1",
     "spectron": "^3.4.0",
     "style-loader": "^0.13.1",
     "tree-kill": "^1.1.0",
@@ -65,8 +68,7 @@
     "vue-template-compiler": "^2.1.10",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0",
-    "node-sass": "^4.4.0",
-    "sass-loader": "^4.1.1"
+    "yml-loader": "^1.1.0"
   },
   "dependencies": {}
 }
