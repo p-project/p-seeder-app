@@ -1,2 +1,21 @@
-message:
-  hello: 'Hello'
+landing_page:
+  title: Home
+  welcome: Welcome.
+  pseudo: Pseudo
+  password: Password
+  login: Login
+  anonymous: Continue anonymously
+header:
+  nav:
+    home: Home
+    my_seeds: My seeds
+    new_seed: New seed
+seed_list:
+  title: My seeds
+new_seed:
+  title: New seed
+  browse: Browse a video to seed.
+  name: Name
+  description: Description
+  seed: Seed
+  

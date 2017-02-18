@@ -6,7 +6,7 @@
                     <md-icon>menu</md-icon>
                 </md-button>
 
-                <h2 class="md-title" style="flex: 1">{{ $route.name }}</h2>
+                <h2 class="md-title" style="flex: 1">{{ $t($route.meta.title) }}</h2>
 
             </md-toolbar>
             <md-sidenav class="md-left" ref="sidenav">
@@ -35,32 +35,22 @@
                     <md-list-item @click="$refs.sidenav.toggle()">
                         <router-link :to="{ name: 'landing-page' }" exact>
                             <md-icon>home</md-icon>
-                            <span>Home</span>
+                            <span>{{ $t('components.header.nav.home') }}</span>
                         </router-link>
                     </md-list-item>
 
                     <md-list-item @click="$refs.sidenav.toggle()">
                         <router-link :to="{ name: 'seed-list' }" exact>
                             <md-icon>local_florist</md-icon>
-                            <span>My seeds</span>
+                            <span>{{ $t('components.header.nav.my_seeds') }}</span>
                         </router-link>
                     </md-list-item>
 
                     <md-list-item @click="$refs.sidenav.toggle()">
                         <router-link :to="{ name: 'new-seed' }" exact>
                             <md-icon>create_new_folder</md-icon>
-                            <span>New seed</span>
+                            <span>{{ $t('components.header.nav.new_seed') }}</span>
                         </router-link>
-                    </md-list-item>
-
-                    <md-list-item>
-                        <md-icon>access_time</md-icon>
-                        <span>Recent</span>
-                    </md-list-item>
-
-                    <md-list-item>
-                        <md-icon>start</md-icon>
-                        <span>Starred</span>
                     </md-list-item>
                 </md-list>
             </md-sidenav>

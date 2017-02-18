@@ -1,7 +1,7 @@
 <template>
     <div class="new-seed">
         <loader :load="loading"></loader>
-        <h3>Select a video to seed.</h3>
+        <h3>{{ $t('components.new_seed.browse') }}</h3>
         <form @submit.stop.prevent="submit" class="seed-form">
             <div class="file-selection">
                 <md-button @click.native="openDialog" class="md-fab md-primary md-mini">
@@ -10,12 +10,12 @@
                 <md-chip v-if="path">{{ path }}</md-chip>
             </div>
             <md-input-container>
-                <label>Name</label>
+                <label>{{ $t('components.new_seed.name') }}</label>
                 <md-input v-model="name"></md-input>
             </md-input-container>
 
             <md-input-container>
-                <label>Description</label>
+                <label>{{ $t('components.new_seed.description') }}</label>
                 <md-textarea v-model="desc"></md-textarea>
             </md-input-container>
 
@@ -25,7 +25,7 @@
                 <md-radio v-model="visibility" id="link" name="visibility" md-value="3" class="md-primary">Link</md-radio>
             </div>
 
-            <md-button class="md-raised md-primary" v-on:click="add">Seed</md-button>
+            <md-button class="md-raised md-primary" v-on:click="add">{{ $t('components.new_seed.seed') }}</md-button>
         </form>
     </div>
 </template>

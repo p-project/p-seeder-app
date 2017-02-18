@@ -13,15 +13,13 @@ import routes from './routes'
 import store from './store'
 import translations from '../translations/translation'
 
-console.log(translations)
-
 Vue.use(Electron)
 Vue.use(Resource)
 Vue.use(Material)
 Vue.use(Router)
 
 Vue.use(VueI18n)
-
+Vue.config.lang = 'en'
 Object.keys(translations).forEach(function (lang) {
   Vue.locale(lang, translations[lang])
 })

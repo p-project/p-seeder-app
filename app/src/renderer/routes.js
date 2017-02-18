@@ -2,17 +2,20 @@ export default [
   {
     path: '/',
     name: 'landing-page',
-    component: require('components/LandingPageView')
+    component: require('components/LandingPageView'),
+    meta: { title: 'components.landing_page.title' }
   },
   {
     path: '/seedList',
     name: 'seed-list',
-    component: require('components/SeedListView')
+    component: require('components/SeedListView'),
+    meta: { title: 'components.seed_list.title' }
   },
   {
     path: '/newSeed',
     name: 'new-seed',
-    component: require('components/NewSeedView')
+    component: require('components/NewSeedView'),
+    meta: { title: 'components.new_seed.title' }
   },
   {
     path: '*',

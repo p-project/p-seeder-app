@@ -2,22 +2,22 @@
     <div class="main">
         <loader :load="loading"></loader>
 
-        <h1>Welcome.</h1>
+        <h1>{{ $t('components.landing_page.welcome') }}</h1>
         <form @submit.stop.prevent="submit" class="login-form">
             <md-input-container>
-                <label>Pseudo</label>
+                <label>{{ $t('components.landing_page.pseudo') }}</label>
                 <md-input></md-input>
             </md-input-container>
             <br />
             <md-input-container>
-                <label>Password</label>
+                <label>{{ $t('components.landing_page.password') }}</label>
                 <md-input type="password"></md-input>
             </md-input-container>
-            <md-button class="md-raised md-primary" v-on:click="log">Login</md-button>
+            <md-button class="md-raised md-primary" v-on:click="log">{{ $t('components.landing_page.login') }}</md-button>
             <br />
         </form>
 
-        <router-link :to="{ name: 'seed-list' }">Continue anonymously</router-link>
+        <router-link :to="{ name: 'seed-list' }">{{ $t('components.landing_page.anonymous') }}</router-link>
 
     </div>
 </template>

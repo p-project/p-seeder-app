@@ -1,2 +1,20 @@
-message:
-  hello: 'Bonjour'
+landing_page:
+  title: Accueil
+  welcome: Bienvenue.
+  pseudo: Pseudo
+  password: Mot de passe
+  login: Connexion
+  anonymous: Continuer sans s'identifier
+header:
+  nav:
+    home: Accueil
+    my_seeds: Mes seeds
+    new_seed: Nouveau seed
+seed_list:
+  title: Mes seeds
+new_seed:
+  title: Nouveau seed
+  browse: Choisissez une vidéo à seeder.
+  name: Name
+  description: Description
+  seed: Seeder
