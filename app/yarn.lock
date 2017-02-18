@@ -10,6 +10,10 @@ vue-electron@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/vue-electron/-/vue-electron-1.0.6.tgz#e798e03180b8933539defe31f92e53b9242b9406"
 
+vue-i18n@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-5.0.1.tgz#80b53b0a2bce6d2c84cdb02f98ea35b7a01fba00"
+
 vue-material@^0.6.3:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/vue-material/-/vue-material-0.6.3.tgz#28b7131cdba441d484ac5a2b3bc0a6291319fd0b"

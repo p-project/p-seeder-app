@@ -2,10 +2,9 @@
     <div class="manager">
         <loader :load="loading"></loader>
         <div class="seed-list">
-            <md-card v-for="torrent in torrents">
+            <md-card v-for="torrent in torrentsInfo">
                 <md-card-header>
-                    <div class="md-title">{{ torrent }}</div>
-                    <div class="md-subhead">Subtitle here</div>
+                    <div class="md-title">{{ torrent.name }}</div>
                 </md-card-header>
 
                 <md-card-media>
@@ -17,7 +16,7 @@
                 </md-card-content>
 
                 <md-card-actions>
-                    <md-button @click="remove(torrent)">Delete</md-button>
+                    <md-button @click="remove(torrent.hash)">Delete</md-button>
                 </md-card-actions>
             </md-card>
         </div>
@@ -62,7 +61,8 @@
     },
     data () {
       return {
-        torrents: [],
+        torrentsHash: [],
+        torrentsInfo: [],
         newTorrent: '',
         loading: false
       }
@@ -70,7 +70,15 @@
     mounted () {
       this.loading = true
       this.$http.get('http://localhost:2342/list').then((response) => {
-        this.torrents = response.data
+        this.torrentsHash = response.data
+        this.torrentsHash.forEach((hash, index) => {
+          console.log(hash, index)
+          this.$http.get('http://localhost:2342/info/' + hash).then((response) => {
+            this.torrentsInfo.push({'name': response.body['name'], 'hash': response.body['infoHash']})
+          }, (response) => {
+            console.log('error', response)
+          })
+        })
         this.loading = false
       }, (response) => {
         console.log('error', response)
@@ -78,10 +86,11 @@
       })
     },
     methods: {
-      remove (torrent) {
+      remove (hash) {
         this.loading = true
-        this.$http.delete('http://localhost:2342/delete/' + torrent).then((response) => {
-          this.torrents = this.torrents.filter(t => t !== torrent)
+        this.$http.delete('http://localhost:2342/delete/' + hash).then((response) => {
+          this.torrentsHash = this.torrentsHash.filter(t => t !== hash)
+          this.torrentsInfo = this.torrentsInfo.filter(t => t.hash !== hash)
           this.loading = false
         }, (response) => {
           console.log('error', response)

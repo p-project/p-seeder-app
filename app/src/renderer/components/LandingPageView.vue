@@ -3,7 +3,6 @@
         <loader :load="loading"></loader>
 
         <h1>Welcome.</h1>
-
         <form @submit.stop.prevent="submit" class="login-form">
             <md-input-container>
                 <label>Pseudo</label>
