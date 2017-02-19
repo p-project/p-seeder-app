@@ -72,7 +72,6 @@
       this.$http.get('http://localhost:2342/list').then((response) => {
         this.torrentsHash = response.data
         this.torrentsHash.forEach((hash, index) => {
-          console.log(hash, index)
           this.$http.get('http://localhost:2342/info/' + hash).then((response) => {
             this.torrentsInfo.push({'name': response.body['name'], 'hash': response.body['infoHash']})
           }, (response) => {

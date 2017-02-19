@@ -3,11 +3,9 @@
         <loader :load="loading"></loader>
         <h3>{{ $t('components.new_seed.browse') }}</h3>
         <form @submit.stop.prevent="submit" class="seed-form">
-            <div class="file-selection">
-                <md-button @click.native="openDialog" class="md-fab md-primary md-mini">
-                    <md-icon>create_new_folder</md-icon>
-                </md-button>
-                <md-chip v-if="path">{{ path }}</md-chip>
+            <div class="file-selection" @dragover.prevent @drop="onDrop">
+                <md-button class="md-raised md-primary" @click.native="openDialog">Select or drop a file</md-button>
+                <md-chip v-if="path" md-deletable @delete="test">{{ path }}</md-chip>
             </div>
             <md-input-container>
                 <label>{{ $t('components.new_seed.name') }}</label>
@@ -45,6 +43,20 @@
     .file-selection {
         display: flex;
         flex-direction: row;
+        border: 4px dashed #ccc;
+        background-color: #f6f6f6;
+        border-radius: 2px;
+        height: 100%;
+        max-height: 400px;
+        max-width: 600px;
+        width: 100%;
+    }
+    #drag-file {
+        background-color: blue;
+        color:white;
+        text-align: center;
+        width:300px;
+        height:300px;
     }
 </style>
 
@@ -81,7 +93,7 @@
           }).then((response) => {
             this.loading = false
               /* eslint-disable no-new */
-            new Notification('The file is now being seeded.')
+            new Notification('The video "' + this.name + '" is now being seeded.')
             this.path = ''
             this.$router.push('/seedList')
           }, (response) => {
@@ -89,6 +101,15 @@
             this.loading = false
           })
         }
+      },
+      test () {
+        this.path = ''
+      },
+      onDrop (e) {
+        e.stopPropagation()
+        e.preventDefault()
+        var files = e.dataTransfer.files
+        this.path = files[0]['path']
       }
     }
   }
