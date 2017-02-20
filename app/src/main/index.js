@@ -13,7 +13,9 @@ function createWindow () {
    */
   mainWindow = new BrowserWindow({
     height: 600,
-    width: 800
+    width: 800,
+    title: 'P-Seeder',
+    icon: '../icons/icon.ico'
   })
 
   mainWindow.loadURL(winURL)

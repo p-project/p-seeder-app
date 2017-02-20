@@ -7,7 +7,14 @@
                 </md-button>
 
                 <h2 class="md-title" style="flex: 1">{{ $t($route.meta.title) }}</h2>
-
+                <div class="langage">
+                    <md-input-container>
+                        <md-select name="langage" v-model="lang">
+                            <md-option value="en">English</md-option>
+                            <md-option value="fr">Français</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
             </md-toolbar>
             <md-sidenav class="md-left" ref="sidenav">
                 <md-toolbar class="md-account-header">
@@ -68,8 +75,19 @@
 </style>
 
 <script>
+  import Vue from 'vue'
 
   export default{
+    data () {
+      return {
+        lang: 'en'
+      }
+    },
+    watch: {
+      lang (val) {
+        Vue.config.lang = val
+      }
+    },
     computed: {
       username () {
         return this.$store.state.authUser
