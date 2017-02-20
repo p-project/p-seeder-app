@@ -18,3 +18,4 @@ new_seed:
   name: Name
   description: Description
   seed: Seeder
+  loading_message: La vidéo est en train d'être ajoutée.

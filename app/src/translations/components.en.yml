@@ -18,4 +18,5 @@ new_seed:
   name: Name
   description: Description
   seed: Seed
+  loading_message: The video is being added.
   

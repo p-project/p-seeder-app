@@ -3,6 +3,7 @@
         <div class="overlay" v-if="load">
             <div class="loader">
                 <md-spinner :md-size="60" md-indeterminate></md-spinner>
+                <p>{{ loadingMessage }}</p>
             </div>
         </div>
     </div>
@@ -22,13 +23,18 @@
             position: absolute;
             top: calc(50% - 21px);
             left: calc(50% - 21px);
+
+            p {
+                color: white;
+                font-weight: bold;
+            }
         }
     }
 </style>
 
 <script>
   export default{
-    props: ['load'],
+    props: ['load', 'loadingMessage'],
     data () {
       return {
         loading: false

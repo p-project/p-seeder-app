@@ -1,6 +1,6 @@
 <template>
     <div class="new-seed">
-        <loader :load="loading"></loader>
+        <loader :load="loading" :loading-message="$t('components.new_seed.loading_message')"></loader>
         <h3>{{ $t('components.new_seed.browse') }}</h3>
         <form @submit.stop.prevent="submit" class="seed-form">
             <div class="file-selection" @dragover.prevent @drop="onDrop">
@@ -73,7 +73,11 @@
     methods: {
       openDialog () {
         const {dialog} = require('electron').remote
-        let result = dialog.showOpenDialog({properties: ['openFile']})
+        let result = dialog.showOpenDialog({
+          filters: [
+            {name: 'Movies', extensions: ['mkv', 'avi', 'mp4', 'webm']}
+          ],
+          properties: ['openFile']})
         if (result) {
           this.path = result[0]
         }
