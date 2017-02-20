@@ -51,13 +51,6 @@
         max-width: 600px;
         width: 100%;
     }
-    #drag-file {
-        background-color: blue;
-        color:white;
-        text-align: center;
-        width:300px;
-        height:300px;
-    }
 </style>
 
 <script>

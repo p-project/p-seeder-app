@@ -2,7 +2,7 @@
     <div>
         <div class="overlay" v-if="load">
             <div class="loader">
-                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                <md-spinner :md-size="60" md-indeterminate></md-spinner>
             </div>
         </div>
     </div>
@@ -22,7 +22,6 @@
             position: absolute;
             top: calc(50% - 21px);
             left: calc(50% - 21px);
-            color: #ff9800;
         }
     }
 </style>

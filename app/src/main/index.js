@@ -18,6 +18,10 @@ function createWindow () {
 
   mainWindow.loadURL(winURL)
 
+  mainWindow.webContents.on('will-navigate', ev => {
+    ev.preventDefault()
+  })
+
   mainWindow.on('closed', () => {
     mainWindow = null
   })
