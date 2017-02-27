@@ -76,12 +76,15 @@
 
 <script>
   import Vue from 'vue'
-
   export default{
     data () {
       return {
-        lang: 'en'
+        lang: Vue.config.lang
       }
+    },
+    mounted () {
+      Vue.config.lang = this.$electron.remote.app.getLocale()
+      this.lang = Vue.config.lang
     },
     watch: {
       lang (val) {

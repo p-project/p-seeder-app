@@ -19,7 +19,6 @@ Vue.use(Material)
 Vue.use(Router)
 
 Vue.use(VueI18n)
-Vue.config.lang = 'en'
 Object.keys(translations).forEach(function (lang) {
   Vue.locale(lang, translations[lang])
 })

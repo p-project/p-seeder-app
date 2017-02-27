@@ -13,6 +13,7 @@ header:
 seed_list:
   title: Mes seeds
 new_seed:
+  drop: Choisir ou glisser un fichier
   title: Nouveau seed
   browse: Choisissez une vidéo à seeder.
   name: Name

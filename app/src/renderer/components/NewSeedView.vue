@@ -4,7 +4,7 @@
         <h3>{{ $t('components.new_seed.browse') }}</h3>
         <form @submit.stop.prevent="submit" class="seed-form">
             <div class="file-selection" @dragover.prevent @drop="onDrop">
-                <md-button class="md-raised md-primary" @click.native="openDialog">Select or drop a file</md-button>
+                <md-button class="md-raised md-primary" @click.native="openDialog"> {{ $t('components.new_seed.drop') }}</md-button>
                 <md-chip v-if="path" md-deletable @delete="test">{{ path }}</md-chip>
             </div>
             <md-input-container>
@@ -23,6 +23,14 @@
                 <md-radio v-model="visibility" id="link" name="visibility" md-value="3" class="md-primary">Link</md-radio>
             </div>
 
+            <md-input-container>
+                <label for="categories">Categories</label>
+                <md-select multiple v-model="selectedCategories">
+                    <md-option v-for="item in categories" id="categories" :value="item.value">
+                        {{ item.label }}
+                    </md-option>
+                </md-select>
+            </md-input-container>
             <md-button class="md-raised md-primary" v-on:click="add">{{ $t('components.new_seed.seed') }}</md-button>
         </form>
     </div>
@@ -60,12 +68,25 @@
     components: {
       'loader': Loader
     },
+    mounted () {
+      this.$http.get('http://localhost:8001/categories').then((response) => {
+        console.log(JSON.parse(response.body)['hydra:member'])
+        JSON.parse(response.body)['hydra:member'].forEach((category, index) => {
+          this.categories.push({'value': category['id'], 'label': category['name']})
+        })
+      }, (response) => {
+        console.log('error', response)
+        this.loading = false
+      })
+    },
     data () {
       return {
         path: '',
         name: '',
         desc: '',
-        categories: '/categories/',
+        categories: [],
+        selectedCategories: [],
+        // categories: '/categories/',
         visibility: 2,
         loading: false
       }

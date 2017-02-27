@@ -13,6 +13,7 @@ header:
 seed_list:
   title: My seeds
 new_seed:
+  drop: Select or drop a file
   title: New seed
   browse: Browse a video to seed.
   name: Name
