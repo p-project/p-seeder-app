@@ -83,7 +83,8 @@
       }
     },
     mounted () {
-      Vue.config.lang = this.$electron.remote.app.getLocale()
+      var locale = this.$electron.remote.app.getLocale()
+      Vue.config.lang = locale.split('-')[0]
       this.lang = Vue.config.lang
     },
     watch: {
