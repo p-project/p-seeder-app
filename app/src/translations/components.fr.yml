@@ -16,7 +16,7 @@ new_seed:
   drop: Choisir ou glisser un fichier
   title: Nouveau seed
   browse: Choisissez une vidéo à seeder.
-  name: Name
+  name: Nom
   description: Description
   seed: Seeder
   loading_message: La vidéo est en train d'être ajoutée.

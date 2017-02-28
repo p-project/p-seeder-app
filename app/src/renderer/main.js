@@ -3,7 +3,7 @@ import Electron from 'vue-electron'
 import Resource from 'vue-resource'
 import Router from 'vue-router'
 import Material from 'vue-material'
-import VueI18n from 'vue-i18n'
+import I18n from 'vue-i18n'
 
 import 'vue-material/dist/vue-material.css'
 import 'font-awesome/css/font-awesome.min.css'
@@ -18,7 +18,7 @@ Vue.use(Resource)
 Vue.use(Material)
 Vue.use(Router)
 
-Vue.use(VueI18n)
+Vue.use(I18n)
 Object.keys(translations).forEach(function (lang) {
   Vue.locale(lang, translations[lang])
 })

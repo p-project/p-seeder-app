@@ -5,17 +5,15 @@
         <form @submit.stop.prevent="submit" class="seed-form">
             <div class="file-selection" @dragover.prevent @drop="onDrop">
                 <md-button class="md-raised md-primary" @click.native="openDialog"> {{ $t('components.new_seed.drop') }}</md-button>
-                <md-chip v-if="path" md-deletable @delete="test">{{ path }}</md-chip>
+                <md-chip v-if="path" md-deletable @delete="empty">{{ path }}</md-chip>
             </div>
             <md-input-container>
                 <label>{{ $t('components.new_seed.name') }}</label>
                 <md-input v-model="name"></md-input>
             </md-input-container>
 
-            <md-input-container>
-                <label>{{ $t('components.new_seed.description') }}</label>
-                <md-textarea v-model="desc"></md-textarea>
-            </md-input-container>
+            <label>{{ $t('components.new_seed.description') }}</label>
+            <simple-mde></simple-mde>
 
             <div>
                 <md-radio v-model="visibility" id="private" name="visibility" md-value="1" class="md-primary">Private</md-radio>
@@ -40,7 +38,6 @@
     .new-seed {
         margin: auto;
         width: 50%;
-        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -63,14 +60,15 @@
 
 <script>
   import Loader from './LoaderView.vue'
+  import SimpleMDE from './SimpleMDEView.vue'
 
   export default{
     components: {
-      'loader': Loader
+      'loader': Loader,
+      'simple-mde': SimpleMDE
     },
     mounted () {
       this.$http.get('http://localhost:8001/categories').then((response) => {
-        console.log(JSON.parse(response.body)['hydra:member'])
         JSON.parse(response.body)['hydra:member'].forEach((category, index) => {
           this.categories.push({'value': category['id'], 'label': category['name']})
         })
@@ -83,10 +81,9 @@
       return {
         path: '',
         name: '',
-        desc: '',
+        desc: '# Coucou',
         categories: [],
         selectedCategories: [],
-        // categories: '/categories/',
         visibility: 2,
         loading: false
       }
@@ -106,8 +103,9 @@
       add () {
         if (this.path) {
           this.loading = true
+          var stringCategories = 'categories/' + this.selectedCategories[0]
           this.$http.post('http://localhost:2342/seed', {
-            path: this.path, desc: this.desc, name: this.name, categories: this.categories
+            path: this.path, desc: this.desc, name: this.name, categories: stringCategories
           }).then((response) => {
             this.loading = false
               /* eslint-disable no-new */
@@ -120,7 +118,7 @@
           })
         }
       },
-      test () {
+      empty () {
         this.path = ''
       },
       onDrop (e) {
