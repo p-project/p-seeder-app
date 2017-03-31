@@ -16,7 +16,7 @@
                 </md-card-content>
 
                 <md-card-actions>
-                    <md-button @click="remove(torrent.hash)">Delete</md-button>
+                    <md-button @click="remove(torrent.hash)">{{ $t('components.seed_list.delete') }}</md-button>
                 </md-card-actions>
             </md-card>
         </div>

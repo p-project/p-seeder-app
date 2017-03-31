@@ -12,6 +12,7 @@ header:
     new_seed: Nouveau seed
 seed_list:
   title: Mes seeds
+  delete: Supprimer
 new_seed:
   drop: Choisir ou glisser un fichier
   title: Nouveau seed
