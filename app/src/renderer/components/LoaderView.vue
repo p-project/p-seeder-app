@@ -12,6 +12,7 @@
 <style scoped lang="scss" rel="stylesheet/scss">
     .overlay {
         background: rgba(0,0,0,.8);
+        text-align: center;
         width: 100%;
         height: 100%;
         position: absolute;
