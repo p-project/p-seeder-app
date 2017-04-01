@@ -7,13 +7,13 @@ describe('Homepage', function () {
     it('should display a welcoming title', function () {
         return this.app.client.getText('h1')
             .then(text => {
-                expect(text).to.equal("Bienvenue.")
+                expect(text).to.equal("Welcome.")
             })
     })
 
     it('shows display a login form', function () {
-        let form = this.app.client.element('.login-form')
+        let form = this.app.client.element('form')
 
-        return expect(form.tagName).to.equal('form')
+        return expect(form).to.not.equal(undefined)
     })
 })
