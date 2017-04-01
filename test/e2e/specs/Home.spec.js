@@ -5,15 +5,15 @@ describe('Homepage', function () {
     afterEach(utils.afterEach)
 
     it('should display a welcoming title', function () {
-        return this.app.client.getTagName('h1')
+        return this.app.client.getText('h1')
             .then(text => {
                 expect(text).to.equal("Bienvenue.")
             })
     })
 
     it('shows display a login form', function () {
-        let elem = document.querySelector('.login-form')
+        let form = this.app.client.element('.login-form')
 
-        return expect(elem.tagName).to.equal('form')
+        return expect(form.tagName).to.equal('form')
     })
 })
