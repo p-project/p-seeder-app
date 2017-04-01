@@ -12,9 +12,8 @@ describe('Homepage', function () {
     })
 
     it('shows display a login form', function () {
-        let elem = $('.login-form')
-        let tagName = elem.getTagName()
+        let elem = document.querySelector('.login-form')
 
-        return expect(tagName).to.equal('form')
+        return expect(elem.tagName).to.equal('form')
     })
 })
