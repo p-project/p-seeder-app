@@ -13,7 +13,7 @@
         </md-card-content>
 
         <md-card-actions>
-            <md-button>Seeder</md-button>
+            <md-button>{{ $t('components.search_result.seed') }}</md-button>
         </md-card-actions>
     </md-card>
 </template>

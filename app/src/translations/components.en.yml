@@ -25,3 +25,6 @@ new_seed:
   loading_message: The video is being added.
 find_seed:
   title: Find a seed
+  search: Search a video
+search_result:
+  seed: Seed

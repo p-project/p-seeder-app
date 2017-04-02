@@ -1,9 +1,9 @@
 <template>
     <div class="find-seed">
-        <form method="get"  @submit.prevent="search">
+        <form method="get" @submit.prevent="search">
             <md-input-container>
                 <md-icon>search</md-icon>
-                <label>Search a video</label>
+                <label>{{ $t('components.find_seed.search') }}</label>
                 <md-input type="search"
                           name="search"
                           v-model="keywords"
