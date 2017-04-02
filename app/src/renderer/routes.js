@@ -18,6 +18,12 @@ export default [
     meta: { title: 'components.new_seed.title' }
   },
   {
+    path: '/findSeed',
+    name: 'find-seed',
+    component: require('components/FindSeedView'),
+    meta: { title: 'components.find_seed.title' }
+  },
+  {
     path: '*',
     redirect: '/'
   }

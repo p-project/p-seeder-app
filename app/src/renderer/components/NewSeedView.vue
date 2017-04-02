@@ -47,7 +47,7 @@
     }
     .file-selection {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         border: 4px dashed #ccc;
         background-color: #f6f6f6;
         border-radius: 2px;
@@ -55,6 +55,12 @@
         max-height: 400px;
         max-width: 600px;
         width: 100%;
+        padding: 10px 10px 10px 10px;
+
+        .md-button {
+            width: 300px;
+        }
+
     }
 </style>
 
