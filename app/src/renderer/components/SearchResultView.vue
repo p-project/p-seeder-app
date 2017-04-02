@@ -1,9 +1,29 @@
 <template>
-    <li>
-        <span class="video-title">{{ video.title }}</span><br />
-        <span class="video-description">{{ video.description }}</span>
-    </li>
+    <md-card>
+        <md-card-header>
+            <div class="md-title">{{ video.title }}</div>
+        </md-card-header>
+
+        <md-card-media>
+            <img src="http://lorempixel.com/400/200" alt="People">
+        </md-card-media>
+            <span>{{ video.description }}</span>
+        <md-card-content>
+
+        </md-card-content>
+
+        <md-card-actions>
+            <md-button>Seeder</md-button>
+        </md-card-actions>
+    </md-card>
 </template>
+
+<style scoped lang="scss" rel="stylesheet/scss">
+    .md-card {
+        width: 300px;
+        margin: 10px 10px 10px 10px;
+    }
+</style>
 
 <script type="text/javascript">
   export default {

@@ -1,23 +1,40 @@
 <template>
-    <div>
-        <form method="get" action="" @submit.prevent="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-            <input type="search"
-                   name="search"
-                   v-model="keywords"
-                   @keyup="search"
-                   @keyup.esc="escape($event.currentTarget)"/>
-            <ul>
-                <li v-if="results.length === 0" class="no-result">Status</li>
-                <search-result v-for="result in results" :video="result"></search-result>
-            </ul>
+    <div class="find-seed">
+        <form method="get"  @submit.prevent="search">
+            <md-input-container>
+                <md-icon>search</md-icon>
+                <label>Search a video</label>
+                <md-input type="search"
+                          name="search"
+                          v-model="keywords"
+                          @keyup.enter.native="search"
+                          @keyup.esc.native="escape($event.currentTarget)"></md-input>
+            </md-input-container>
         </form>
+        <div class="result">
+            <search-result v-for="result in results" :video="result"></search-result>
+        </div>
     </div>
 </template>
 
 
 <style scoped lang="scss" rel="stylesheet/scss">
+    .find-seed {
+        margin: auto;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
+        .md-input {
+            width: 400px;
+        }
+        .result {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
 </style>
 
 <script type="text/javascript">
