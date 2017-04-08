@@ -74,8 +74,8 @@
       'simple-mde': SimpleMDE
     },
     mounted () {
-      this.$http.get('http://localhost:8001/categories').then((response) => {
-        JSON.parse(response.body)['hydra:member'].forEach((category, index) => {
+      this.$http.get('http://localhost:2342/pApi/categories').then((response) => {
+        response.body.forEach((category, index) => {
           this.categories.push({'value': category['id'], 'label': category['name']})
         })
       }, (response) => {

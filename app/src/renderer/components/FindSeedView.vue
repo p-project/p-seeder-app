@@ -57,9 +57,9 @@
           this.results = []
           return
         }
-        this.$http.get('http://localhost:8001/videos?title=' + this.keywords)
+        this.$http.get('http://localhost:2342/pApi/videos?title=' + this.keywords)
           .then((response) => {
-            this.results = JSON.parse(response.body)['hydra:member']
+            this.results = response.body
           })
           .catch(() => {
             this.results = []
