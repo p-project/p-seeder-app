@@ -5,7 +5,7 @@ describe('Homepage', function () {
     afterEach(utils.afterEach)
 
     it('should display a welcoming title', function () {
-        return this.app.client.getText('h1')
+      return this.app.client.getText('h1')
             .then(text => {
                 expect(text).to.equal("Welcome.")
             })
