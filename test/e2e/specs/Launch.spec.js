@@ -8,7 +8,7 @@ describe('Launch', function () {
     return this.app.client.getWindowCount()
       .then(count => {
         expect(count).to.equal(1)
-    })
+      })
   })
 
   it('shows the proper application title', function () {
