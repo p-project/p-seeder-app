@@ -11,7 +11,7 @@ describe('Homepage', function () {
             })
     })
 
-    it('shows display a login form', function () {
+    it('shows a login form', function () {
         let form = this.app.client.element('form')
 
         return expect(form).to.not.equal(undefined)
