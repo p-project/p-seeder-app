@@ -46,6 +46,28 @@
                         </router-link>
                     </md-list-item>
 
+                    <md-list-item>
+                        <md-icon>create_new_folder</md-icon>
+                        <span>{{ $t('components.header.nav.new_seed') }}</span>
+
+                        <md-list-expand>
+                            <md-list>
+                                <router-link :to="{ name: 'find-seed' }" exact>
+                                    <md-list-item class="md-inset"
+                                                  @click="$refs.sidenav.toggle()">
+                                        {{ $t('components.header.nav.existing_file') }}
+                                    </md-list-item>
+                                </router-link>
+                                <router-link :to="{ name: 'new-seed' }" exact>
+                                    <md-list-item class="md-inset"
+                                                  @click="$refs.sidenav.toggle()">
+                                        {{ $t('components.header.nav.new_file') }}
+                                    </md-list-item>
+                                </router-link>
+                            </md-list>
+                        </md-list-expand>
+                    </md-list-item>
+
                     <md-list-item @click="$refs.sidenav.toggle()">
                         <router-link :to="{ name: 'seed-list' }" exact>
                             <md-icon>local_florist</md-icon>
@@ -53,12 +75,6 @@
                         </router-link>
                     </md-list-item>
 
-                    <md-list-item @click="$refs.sidenav.toggle()">
-                        <router-link :to="{ name: 'new-seed' }" exact>
-                            <md-icon>create_new_folder</md-icon>
-                            <span>{{ $t('components.header.nav.new_seed') }}</span>
-                        </router-link>
-                    </md-list-item>
                 </md-list>
             </md-sidenav>
         </div>

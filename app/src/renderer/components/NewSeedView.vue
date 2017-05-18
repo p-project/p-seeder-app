@@ -47,7 +47,7 @@
     }
     .file-selection {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         border: 4px dashed #ccc;
         background-color: #f6f6f6;
         border-radius: 2px;
@@ -55,6 +55,12 @@
         max-height: 400px;
         max-width: 600px;
         width: 100%;
+        padding: 10px 10px 10px 10px;
+
+        .md-button {
+            width: 300px;
+        }
+
     }
 </style>
 
@@ -68,8 +74,8 @@
       'simple-mde': SimpleMDE
     },
     mounted () {
-      this.$http.get('http://localhost:8001/categories').then((response) => {
-        JSON.parse(response.body)['hydra:member'].forEach((category, index) => {
+      this.$http.get('http://localhost:2342/pApi/categories').then((response) => {
+        response.body.forEach((category, index) => {
           this.categories.push({'value': category['id'], 'label': category['name']})
         })
       }, (response) => {

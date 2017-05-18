@@ -25,22 +25,7 @@
 </template>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-    .overlay {
-        background: rgba(0,0,0,.8);
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 999;
 
-        .loader {
-            position: absolute;
-            top: calc(50% - 21px);
-            left: calc(50% - 21px);
-            color: #ff9800;
-        }
-    }
     .seed-list {
         display: flex;
         flex-wrap: wrap;

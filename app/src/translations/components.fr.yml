@@ -10,6 +10,8 @@ header:
     home: Accueil
     my_seeds: Mes seeds
     new_seed: Nouveau seed
+    existing_file: Vidéo existante
+    new_file: Nouvelle vidéo
 seed_list:
   title: Mes seeds
   delete: Supprimer
@@ -21,3 +23,8 @@ new_seed:
   description: Description
   seed: Seeder
   loading_message: La vidéo est en train d'être ajoutée.
+find_seed:
+  title: Trouver un seed
+  search: Chercher une vidéo
+search_result:
+  seed: Seeder
