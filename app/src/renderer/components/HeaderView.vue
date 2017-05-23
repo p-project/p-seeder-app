@@ -75,6 +75,13 @@
                         </router-link>
                     </md-list-item>
 
+                    <md-list-item @click="$refs.sidenav.toggle()">
+                        <router-link :to="{ name: 'settings' }" exact>
+                            <md-icon>settings</md-icon>
+                            <span>{{ $t('components.header.nav.settings') }}</span>
+                        </router-link>
+                    </md-list-item>
+
                 </md-list>
             </md-sidenav>
         </div>

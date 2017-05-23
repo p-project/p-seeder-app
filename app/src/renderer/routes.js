@@ -24,6 +24,12 @@ export default [
     meta: { title: 'components.find_seed.title' }
   },
   {
+    path: '/settings',
+    name: 'settings',
+    component: require('components/ConfigurationView'),
+    meta: { title: 'components.settings.title' }
+  },
+  {
     path: '*',
     redirect: '/'
   }

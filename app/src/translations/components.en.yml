@@ -12,6 +12,7 @@ header:
     new_seed: New seed
     existing_file: Existing video
     new_file: New video
+    settings: Settings
 seed_list:
   title: My seeds
   delete: Delete
@@ -28,3 +29,5 @@ find_seed:
   search: Search a video
 search_result:
   seed: Seed
+settings:
+  title: Settings
