@@ -4,6 +4,7 @@
   "description": "The P-Seeder application",
   "main": "./dist/main.js",
   "dependencies": {
+    "electron-config": "^1.0.0",
     "font-awesome": "^4.7.0",
     "simplemde": "^1.11.2",
     "vue": "^2.1.10",
