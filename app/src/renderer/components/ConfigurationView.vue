@@ -2,7 +2,7 @@
     <div class="config">
         <form class="config-form">
             <md-input-container>
-                <md-select name="langage" v-model="lang">
+                <md-select name="langage" v-model="lang" v-on:click="setLang()">
                     <md-option value="en">English</md-option>
                     <md-option value="fr">Français</md-option>
                 </md-select>
@@ -35,12 +35,18 @@
 </style>
 
 <script>
-  import Vue from 'vue'
+  import config from '../config'
+
   export default{
     name: 'settings',
     data () {
       return {
-        lang: Vue.config.lang
+        lang: config.get('lang')
+      }
+    },
+    methods: {
+      setLang () {
+        config.set('lang', this.lang)
       }
     }
   }
