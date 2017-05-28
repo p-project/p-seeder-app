@@ -27,6 +27,7 @@
 
 <script type="text/javascript">
   export default {
+    name: 'search-result',
     props: ['video']
   }
 </script>

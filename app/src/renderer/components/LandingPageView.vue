@@ -43,11 +43,9 @@
     components: {
       'loader': Loader
     },
-    data () {
-      return {
-        loading: false
-      }
-    },
+    data: () => ({
+      loading: false
+    }),
     methods: {
       log () {
         this.$store.dispatch('login')

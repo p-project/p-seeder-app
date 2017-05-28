@@ -69,6 +69,7 @@
   import SimpleMDE from './SimpleMDEView.vue'
 
   export default{
+    name: 'new-seed',
     components: {
       'loader': Loader,
       'simple-mde': SimpleMDE
@@ -83,17 +84,15 @@
         this.loading = false
       })
     },
-    data () {
-      return {
-        path: '',
-        name: '',
-        desc: '# Coucou',
-        categories: [],
-        selectedCategories: [],
-        visibility: 2,
-        loading: false
-      }
-    },
+    data: () => ({
+      path: '',
+      name: '',
+      desc: '# Coucou',
+      categories: [],
+      selectedCategories: [],
+      visibility: 2,
+      loading: false
+    }),
     methods: {
       openDialog () {
         const {dialog} = require('electron').remote

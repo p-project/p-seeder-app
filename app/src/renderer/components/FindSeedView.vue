@@ -45,12 +45,10 @@
     components: {
       'search-result': SearchResult
     },
-    data () {
-      return {
-        keywords: '',
-        results: []
-      }
-    },
+    data: () => ({
+      keywords: '',
+      results: []
+    }),
     methods: {
       search () {
         if (this.keywords.length < 3) {
