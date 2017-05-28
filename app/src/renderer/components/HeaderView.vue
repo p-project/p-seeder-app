@@ -99,6 +99,8 @@
 
 <script>
   import Vue from 'vue'
+  import config from '../config'
+
   export default{
     data () {
       return {
@@ -106,8 +108,7 @@
       }
     },
     mounted () {
-      var locale = this.$electron.remote.app.getLocale()
-      Vue.config.lang = locale.split('-')[0]
+      Vue.config.lang = config.get('lang')
       this.lang = Vue.config.lang
     },
     watch: {
