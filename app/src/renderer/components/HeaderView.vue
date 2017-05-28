@@ -9,7 +9,7 @@
                 <h2 class="md-title" style="flex: 1">{{ $t($route.meta.title) }}</h2>
                 <div class="langage">
                     <md-input-container>
-                        <md-select name="langage" v-model="lang">
+                        <md-select name="langage" v-model="lang" :value="lang">
                             <md-option value="en">English</md-option>
                             <md-option value="fr">Français</md-option>
                         </md-select>
@@ -98,22 +98,17 @@
 </style>
 
 <script>
-  import Vue from 'vue'
   import config from '../config'
 
   export default{
     data () {
       return {
-        lang: Vue.config.lang
+        lang: config.get('lang')
       }
-    },
-    mounted () {
-      Vue.config.lang = config.get('lang')
-      this.lang = Vue.config.lang
     },
     watch: {
       lang (val) {
-        Vue.config.lang = val
+        config.set('lang', val)
       }
     },
     computed: {

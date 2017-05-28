@@ -3,7 +3,7 @@
         <form class="config-form">
             <md-input-container>
                 <label for="lang">Language</label>
-                <md-select name="lang" v-model="lang" id="lang">
+                <md-select name="lang" v-model="lang" id="lang" :value="lang">
                     <md-option value="english">English</md-option>
                     <md-option value="fr">Français</md-option>
                 </md-select>
@@ -42,7 +42,7 @@
   export default{
     name: 'settings',
     data: () => ({
-      lang: 'english'
+      lang: config.get('lang')
     }),
     methods: {
       setLang () {

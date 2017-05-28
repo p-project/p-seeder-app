@@ -8,7 +8,7 @@ import I18n from 'vue-i18n'
 import 'vue-material/dist/vue-material.css'
 import 'font-awesome/css/font-awesome.min.css'
 
-import App from './App'
+import App from './App.vue'
 import routes from './routes'
 import store from './store'
 import translations from '../translations/translation'
