@@ -34,7 +34,8 @@
     },
     created: function () {
       if (config.get('lang') === undefined) {
-        config.set('lang', this.$electron.remote.app.getLocale())
+        let locale = this.$electron.remote.app.getLocale().split('-')[0]
+        this.$store.commit('SET_LANG', locale)
       }
     }
   }

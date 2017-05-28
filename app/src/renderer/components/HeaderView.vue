@@ -8,12 +8,7 @@
 
                 <h2 class="md-title" style="flex: 1">{{ $t($route.meta.title) }}</h2>
                 <div class="langage">
-                    <md-input-container>
-                        <md-select name="langage" v-model="lang" :value="lang">
-                            <md-option value="en">English</md-option>
-                            <md-option value="fr">Français</md-option>
-                        </md-select>
-                    </md-input-container>
+                    <language-select></language-select>
                 </div>
             </md-toolbar>
             <md-sidenav class="md-left" ref="sidenav">
@@ -98,18 +93,12 @@
 </style>
 
 <script>
-  import config from '../config'
+  import LanguageSelect from './LanguageSelectView.vue'
 
   export default{
-    data () {
-      return {
-        lang: config.get('lang')
-      }
-    },
-    watch: {
-      lang (val) {
-        config.set('lang', val)
-      }
+    name: 'header',
+    components: {
+      'language-select': LanguageSelect
     },
     computed: {
       username () {

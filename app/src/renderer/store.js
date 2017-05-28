@@ -1,15 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import config from './config'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    authUser: null
+    authUser: null,
+    lang: config.get('lang')
   },
   mutations: {
     SET_USER: function (state, user) {
       state.authUser = user
+    },
+    SET_LANG: function (state, lang) {
+      state.lang = lang
+      config.set('lang', lang)
+      Vue.config.lang = lang
     }
   },
   actions: {

@@ -1,13 +1,8 @@
 <template>
     <div class="config">
         <form class="config-form">
-            <md-input-container>
-                <label for="lang">Language</label>
-                <md-select name="lang" v-model="lang" id="lang" :value="lang">
-                    <md-option value="english">English</md-option>
-                    <md-option value="fr">Français</md-option>
-                </md-select>
-            </md-input-container>
+
+            <language-select></language-select>
 
             <md-input-container>
                 <label>Débit maximum</label>
@@ -36,19 +31,12 @@
 </style>
 
 <script>
-  import Vue from 'vue'
-  import config from '../config'
+  import LanguageSelect from './LanguageSelectView.vue'
 
   export default{
     name: 'settings',
-    data: () => ({
-      lang: config.get('lang')
-    }),
-    methods: {
-      setLang () {
-        config.set('lang', this.lang)
-        Vue.config.lang = this.lang
-      }
+    components: {
+      'language-select': LanguageSelect
     }
   }
 </script>
