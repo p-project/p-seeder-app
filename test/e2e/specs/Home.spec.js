@@ -6,9 +6,9 @@ describe('Homepage', function () {
 
   it('should display a welcoming title', function () {
     return this.app.client.getText('h1')
-      .then(text => {
-        expect(text).to.equal('Welcome.')
-      })
+            .then(text => {
+              expect(text).to.equal('Welcome.')
+            })
   })
 
   it('should show a login form', function () {
