@@ -31,3 +31,7 @@ search_result:
   seed: Seeder
 settings:
   title: Paramètres
+  label: Langage
+  max_flow: Débit maximum
+  unlimited: Illimité
+  max_space: Espace disque maximum

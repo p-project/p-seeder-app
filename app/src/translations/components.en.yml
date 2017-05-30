@@ -31,3 +31,7 @@ search_result:
   seed: Seed
 settings:
   title: Settings
+  label: Language
+  max_flow: Maximum flow
+  unlimited: Unlimited
+  max_space: Maximum disc space
