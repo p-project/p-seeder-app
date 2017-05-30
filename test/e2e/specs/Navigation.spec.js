@@ -19,10 +19,16 @@ describe('Navigation', function () {
           appContent = appContent.waitForVisible(waitedContent)
         }
       }
-      return appContent.getText('h2')
-        .then(text => {
-          expect(text).to.equal(section.title)
-        })
+      return Promise.all([
+        appContent.getText('h2')
+          .then(text => {
+            expect(text).to.equal(section.title)
+          }),
+        appContent.element(section.class)
+          .then(element => {
+            expect(element).to.not.equal(undefined)
+          })
+      ])
     })
   })
 })
