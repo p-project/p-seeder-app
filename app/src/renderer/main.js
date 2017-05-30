@@ -42,3 +42,5 @@ new Vue({
   store,
   ...App
 }).$mount('#app')
+
+window.vue = Vue

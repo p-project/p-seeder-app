@@ -2,7 +2,7 @@
     <header>
         <div>
             <md-toolbar>
-                <md-button class="md-icon-button" @click="$refs.sidenav.toggle()">
+                <md-button class="md-icon-button" @click="$refs.sidenav.toggle()" id="menu-toggle">
                     <md-icon>menu</md-icon>
                 </md-button>
 
@@ -16,7 +16,7 @@
                     </md-input-container>
                 </div>
             </md-toolbar>
-            <md-sidenav class="md-left" ref="sidenav">
+            <md-sidenav class="md-left" ref="sidenav" id="sidenav">
                 <md-toolbar class="md-account-header">
                     <md-list class="md-transparent">
                         <md-list-item class="md-avatar-list">
@@ -46,11 +46,11 @@
                         </router-link>
                     </md-list-item>
 
-                    <md-list-item>
+                    <md-list-item id="new-seed-toggle">
                         <md-icon>create_new_folder</md-icon>
                         <span>{{ $t('components.header.nav.new_seed') }}</span>
 
-                        <md-list-expand>
+                        <md-list-expand id="new-seed">
                             <md-list>
                                 <router-link :to="{ name: 'find-seed' }" exact>
                                     <md-list-item class="md-inset"
