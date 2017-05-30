@@ -18,6 +18,14 @@ export default {
       waitTimeout: 10000
     })
 
-    return this.app.start()
+    /*
+     * Starts application and forces the current
+     * language to English
+     */
+    return this.app.start().then(function(app) {
+      app.client.execute(function() {
+        window.vue.config.lang = 'en'
+      })
+    })
   }
 }
