@@ -87,7 +87,7 @@
     data: () => ({
       path: '',
       name: '',
-      desc: '# Coucou',
+      desc: '',
       categories: [],
       selectedCategories: [],
       visibility: 2,
