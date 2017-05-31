@@ -33,7 +33,7 @@
       'header-v': HeaderV
     },
     created: function () {
-      if (config.get('lang') === undefined) {
+      if (config.get('lang') == null) {
         let locale = this.$electron.remote.app.getLocale().split('-')[0]
         this.$store.commit('SET_LANG', locale)
       }
