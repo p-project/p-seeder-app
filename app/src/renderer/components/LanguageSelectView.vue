@@ -1,6 +1,6 @@
 <template>
     <md-input-container>
-        <label for="lang">Language</label>
+        <label for="lang">{{ label }}</label>
         <md-select name="lang" v-model="localLang" :value="globalLang" @change="setLang()">
             <md-option value="en">English</md-option>
             <md-option value="fr">Français</md-option>
@@ -14,6 +14,7 @@
 <script>
   export default{
     name: 'language-select',
+    props: ['label'],
     data: () => ({
       localLang: this.globalLang
     }),

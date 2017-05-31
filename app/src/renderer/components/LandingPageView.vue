@@ -13,7 +13,7 @@
                 <label>{{ $t('components.landing_page.password') }}</label>
                 <md-input type="password"></md-input>
             </md-input-container>
-            <md-button class="md-raised md-primary" v-on:click="log">{{ $t('components.landing_page.login') }}</md-button>
+            <md-button class="md-raised md-primary" @click="log">{{ $t('components.landing_page.login') }}</md-button>
             <br />
         </form>
 
@@ -22,18 +22,17 @@
     </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" rel="stylesheet/scss">
     .main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center
-    }
+        text-align: center;
 
-    .login-form {
-        width: 300px;
+        .login-form {
+            width: 300px;
+        }
     }
-
 </style>
 
 <script>

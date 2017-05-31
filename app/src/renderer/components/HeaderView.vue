@@ -8,7 +8,7 @@
 
                 <h2 class="md-title" style="flex: 1">{{ $t($route.meta.title) }}</h2>
                 <div class="langage">
-                    <language-select></language-select>
+                    <language-select label=""></language-select>
                 </div>
             </md-toolbar>
             <md-sidenav class="md-left" ref="sidenav" id="sidenav">
