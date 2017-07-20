@@ -16,7 +16,7 @@ seed_list:
   title: Mes seeds
   delete: Supprimer
 new_seed:
-  drop: Choisir ou glisser un fichier
+  drop: Choisir ou glisser-déposer un fichier
   title: Nouveau seed
   browse: Choisissez une vidéo à seeder.
   name: Nom
