@@ -41,17 +41,16 @@
   import Loader from './LoaderView.vue'
 
   export default{
+    name: 'seed-list',
     components: {
       'loader': Loader
     },
-    data () {
-      return {
-        torrentsHash: [],
-        torrentsInfo: [],
-        newTorrent: '',
-        loading: false
-      }
-    },
+    data: () => ({
+      torrentsHash: [],
+      torrentsInfo: [],
+      newTorrent: '',
+      loading: false
+    }),
     mounted () {
       this.loading = true
       this.$http.get('http://localhost:2342/list').then((response) => {

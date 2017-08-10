@@ -7,7 +7,8 @@ describe('Navigation', function () {
   let sections = [
     { nav: { '#new-seed-toggle': '#new-seed', 'a[href*="findSeed"]': false }, title: 'Find a seed', class: 'find-seed' },
     { nav: { '#new-seed-toggle': '#new-seed', 'a[href*="newSeed"]': false }, title: 'New seed', class: 'new-seed' },
-    { nav: { 'a[href*="seedList"]': false }, title: 'My seeds', class: 'seed-list' }
+    { nav: { 'a[href*="seedList"]': false }, title: 'My seeds', class: 'seed-list' },
+    { nav: { 'a[href*="settings"]': false }, title: 'Settings', class: 'config' }
   ]
   sections.forEach(section => {
     it('should display the "' + section.title + '" page', function () {

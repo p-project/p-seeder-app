@@ -35,11 +35,10 @@
 
 <script>
   export default{
+    name: 'loader',
     props: ['load', 'loadingMessage'],
-    data () {
-      return {
-        loading: false
-      }
-    }
+    data: () => ({
+      loading: false
+    })
   }
 </script>

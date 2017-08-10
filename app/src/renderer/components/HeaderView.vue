@@ -8,12 +8,7 @@
 
                 <h2 class="md-title" style="flex: 1">{{ $t($route.meta.title) }}</h2>
                 <div class="langage">
-                    <md-input-container>
-                        <md-select name="langage" v-model="lang">
-                            <md-option value="en">English</md-option>
-                            <md-option value="fr">Français</md-option>
-                        </md-select>
-                    </md-input-container>
+                    <language-select label=""></language-select>
                 </div>
             </md-toolbar>
             <md-sidenav class="md-left" ref="sidenav" id="sidenav">
@@ -75,6 +70,13 @@
                         </router-link>
                     </md-list-item>
 
+                    <md-list-item @click="$refs.sidenav.toggle()">
+                        <router-link :to="{ name: 'settings' }" exact>
+                            <md-icon>settings</md-icon>
+                            <span>{{ $t('components.header.nav.settings') }}</span>
+                        </router-link>
+                    </md-list-item>
+
                 </md-list>
             </md-sidenav>
         </div>
@@ -91,22 +93,12 @@
 </style>
 
 <script>
-  import Vue from 'vue'
+  import LanguageSelect from './LanguageSelectView.vue'
+
   export default{
-    data () {
-      return {
-        lang: Vue.config.lang
-      }
-    },
-    mounted () {
-      var locale = this.$electron.remote.app.getLocale()
-      Vue.config.lang = locale.split('-')[0]
-      this.lang = Vue.config.lang
-    },
-    watch: {
-      lang (val) {
-        Vue.config.lang = val
-      }
+    name: 'header',
+    components: {
+      'language-select': LanguageSelect
     },
     computed: {
       username () {

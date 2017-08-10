@@ -12,6 +12,7 @@ header:
     new_seed: New seed
     existing_file: Existing video
     new_file: New video
+    settings: Settings
 seed_list:
   title: My seeds
   delete: Delete
@@ -28,3 +29,9 @@ find_seed:
   search: Search for a video
 search_result:
   seed: Seed
+settings:
+  title: Settings
+  label: Language
+  max_flow: Maximum flow
+  unlimited: Unlimited
+  max_space: Maximum disc space
