@@ -6,4 +6,5 @@ dependencies:
     - yarn
 install:
   - yarn
-
+run:
+  - npm run dev
